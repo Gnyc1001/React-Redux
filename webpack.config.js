@@ -8,16 +8,15 @@ module.exports = {
       path: path.resolve(__dirname, 'public')  
     },
     watch: true,
-    mondule:{
+    module:{
       loaders: [
         {
           test:/\.js$/,
-          exlude:/node_models/,
+          exclude:/node_models/,
           loader: 'babel-loader',
           query: {
             presets: ['react', 'es2015', 'stage-1']
           }
-
         }
       ]
     }
