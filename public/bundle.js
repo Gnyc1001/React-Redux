@@ -74,13 +74,13 @@ var _redux = __webpack_require__(8);
 
 //define reducers
 var reducer = function reducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { books: [] };
     var action = arguments[1];
 
     switch (action.type) {
         case "POST_BOOK":
-            var books = state.concat(action.payload);
-            return state = books;
+            var books = state.books.concat(action.payload);
+            return { books: books };
             break;
     }
     return state;
