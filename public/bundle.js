@@ -85,6 +85,10 @@ var reducer = function reducer() {
             // return {books};
             return { books: [].concat(_toConsumableArray(state.books), _toConsumableArray(action.payload)) };
             break;
+        case "DELETE_BOOK":
+            var currentBookToDelete = [].concat(_toConsumableArray(state.books));
+            return { books: [].concat(_toConsumableArray(state.books), _toConsumableArray(action.payload)) };
+            break;
     }
     return state;
 };
@@ -113,13 +117,10 @@ store.dispatch({
 });
 
 store.dispatch({
-    type: "POST_BOOK",
-    payload: [{
-        id: 3,
-        title: 'this is the three book title',
-        description: 'this is the three book description',
-        price: 243.99
-    }]
+    type: "DELETE_BOOK",
+    payload: {
+        id: 1
+    }
 });
 
 /***/ }),
