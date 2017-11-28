@@ -60,71 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _redux = __webpack_require__(8);
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-//define reducers
-var reducer = function reducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { books: [] };
-    var action = arguments[1];
-
-    switch (action.type) {
-        case "POST_BOOK":
-            // let books = state.books.concat(action.payload);
-            // return {books};
-            return { books: [].concat(_toConsumableArray(state.books), _toConsumableArray(action.payload)) };
-            break;
-        case "DELETE_BOOK":
-            var currentBookToDelete = [].concat(_toConsumableArray(state.books));
-            return { books: [].concat(_toConsumableArray(state.books), _toConsumableArray(action.payload)) };
-            break;
-    }
-    return state;
-};
-var store = (0, _redux.createStore)(reducer);
-
-//create the store
-store.subscribe(function () {
-    console.log('current state is ', store.getState());
-    //console.log('current price is ', store.getState()[1].price);
-});
-
-//create and dispatch actions
-store.dispatch({
-    type: "POST_BOOK",
-    payload: [{
-        id: 1,
-        title: 'this is the book title',
-        description: 'this is the book description',
-        price: 28.99
-    }, {
-        id: 2,
-        title: 'this is another book title',
-        description: 'this is another book description',
-        price: 43.99
-    }]
-});
-
-store.dispatch({
-    type: "DELETE_BOOK",
-    payload: {
-        id: 1
-    }
-});
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -317,7 +257,7 @@ process.umask = function () {
 };
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -332,7 +272,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = createStore;
 
-var _isPlainObject = __webpack_require__(3);
+var _isPlainObject = __webpack_require__(2);
 
 var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
@@ -589,7 +529,7 @@ var ActionTypes = exports.ActionTypes = {
 }
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -672,7 +612,7 @@ function isPlainObject(value) {
 exports.default = isPlainObject;
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -694,7 +634,7 @@ var _Symbol = _root2.default.Symbol;
 exports.default = _Symbol;
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -724,7 +664,7 @@ try {
 module.exports = g;
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -757,7 +697,7 @@ function warning(message) {
 }
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -801,6 +741,64 @@ function compose() {
 }
 
 /***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _redux = __webpack_require__(8);
+
+var _index = __webpack_require__(24);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//create store
+var store = (0, _redux.createStore)(_index2.default);
+
+store.subscribe(function () {
+    console.log('current state is: ', store.getState());
+    //console.log('current price: ', store.getState()[1].price);
+});
+//create and dispatch actions
+store.dispatch({
+    type: "POST_BOOK",
+    payload: [{
+        id: 1,
+        title: 'this is the book title',
+        description: 'this is the book descript',
+        price: 35.99
+    }, {
+        id: 2,
+        title: 'this is the second book title',
+        description: 'this is the second book descript',
+        price: 50
+    }]
+});
+
+//delete a book
+store.dispatch({
+    type: "DELETE_BOOK",
+    payload: { id: 1 }
+});
+
+// UPDATE a book
+store.dispatch({
+    type: "UPDATE_BOOK",
+    payload: { id: 2,
+        title: 'Learn React in 24h' }
+});
+
+// cart actions
+// add to cart
+store.dispatch({
+    type: "ADD_TO_CART",
+    payload: { id: 2 }
+});
+
+/***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -812,7 +810,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
 
-var _createStore = __webpack_require__(2);
+var _createStore = __webpack_require__(1);
 
 var _createStore2 = _interopRequireDefault(_createStore);
 
@@ -828,11 +826,11 @@ var _applyMiddleware = __webpack_require__(23);
 
 var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-var _compose = __webpack_require__(7);
+var _compose = __webpack_require__(6);
 
 var _compose2 = _interopRequireDefault(_compose);
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(5);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -853,7 +851,7 @@ exports.combineReducers = _combineReducers2.default;
 exports.bindActionCreators = _bindActionCreators2.default;
 exports.applyMiddleware = _applyMiddleware2.default;
 exports.compose = _compose2.default;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 9 */
@@ -866,7 +864,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Symbol2 = __webpack_require__(4);
+var _Symbol2 = __webpack_require__(3);
 
 var _Symbol3 = _interopRequireDefault(_Symbol2);
 
@@ -947,7 +945,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var freeGlobal = (typeof global === 'undefined' ? 'undefined' : _typeof(global)) == 'object' && global && global.Object === Object && global;
 
 exports.default = freeGlobal;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
 /* 12 */
@@ -960,7 +958,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Symbol2 = __webpack_require__(4);
+var _Symbol2 = __webpack_require__(3);
 
 var _Symbol3 = _interopRequireDefault(_Symbol2);
 
@@ -1179,7 +1177,7 @@ if (typeof self !== 'undefined') {
 
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(19)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(19)(module)))
 
 /***/ }),
 /* 19 */
@@ -1252,13 +1250,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = combineReducers;
 
-var _createStore = __webpack_require__(2);
+var _createStore = __webpack_require__(1);
 
-var _isPlainObject = __webpack_require__(3);
+var _isPlainObject = __webpack_require__(2);
 
 var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(5);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -1390,7 +1388,7 @@ function combineReducers(reducers) {
     return hasChanged ? nextState : state;
   };
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 22 */
@@ -1466,7 +1464,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = applyMiddleware;
 
-var _compose = __webpack_require__(7);
+var _compose = __webpack_require__(6);
 
 var _compose2 = _interopRequireDefault(_compose);
 
@@ -1525,6 +1523,113 @@ function applyMiddleware() {
       });
     };
   };
+}
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _redux = __webpack_require__(8);
+
+var _booksReducers = __webpack_require__(25);
+
+var _cartReducers = __webpack_require__(26);
+
+//combine reducers
+
+//IMPORT Reducers to be combined
+exports.default = (0, _redux.combineReducers)({
+    books: _booksReducers.booksReducers,
+    cart: _cartReducers.cartReducers
+});
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+//book reducers
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.booksReducers = booksReducers;
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function booksReducers() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { books: [] };
+    var action = arguments[1];
+
+    switch (action.type) {
+        case "POST_BOOK":
+            //let books = state.books.concat(action.payload);
+            //return {books};
+            return { books: [].concat(_toConsumableArray(state.books), _toConsumableArray(action.payload)) };
+            break;
+        case "DELETE_BOOK":
+            //create copy of current array of books
+            var currentBookToDelete = [].concat(_toConsumableArray(state.books));
+            //determine at index in books array is the boox to be deleted
+            var indexToDelete = currentBookToDelete.findIndex(function (book) {
+                return book.id === action.payload.id;
+            });
+            return { books: [].concat(_toConsumableArray(currentBookToDelete.slice(0, indexToDelete)), _toConsumableArray(currentBookToDelete.slice(indexToDelete + 1))) };
+            break;
+        case "UPDATE_BOOK":
+            //create copy of curreny array of books
+            var currentBookToUpdate = [].concat(_toConsumableArray(state.books));
+            //determine at which index books array is the book to delete
+            var indexToUpdate = currentBookToUpdate.findIndex(function (book) {
+                return book.id === action.payload.id;
+            });
+            //create a new book with new values and same array index of the item to replace.  Use {...} spread operator also can use concat method as well
+            var newBookToUpdate = _extends({}, currentBookToUpdate[indexToUpdate], { title: action.payload.title
+            });
+            console.log('what is the newBookToUpdate', newBookToUpdate);
+            //use slice to remove the book at the specified inx, replace with new object and join with the rest in the array.
+            return { books: [].concat(_toConsumableArray(currentBookToUpdate.slice(0, indexToUpdate)), [newBookToUpdate], _toConsumableArray(currentBookToUpdate.slice(indexToUpdate + 1))) };
+            break;
+    }
+    return state;
+}
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.cartReducers = cartReducers;
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function cartReducers() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { cart: [] };
+    var action = arguments[1];
+
+
+    switch (action.type) {
+        case "ADD_TO_CART":
+            return { cart: [].concat(_toConsumableArray(state.cart), _toConsumableArray(action.payload)) };
+            break;
+    }
+    return state;
 }
 
 /***/ })

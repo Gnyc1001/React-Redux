@@ -1,6 +1,6 @@
 "use strict"
 //book reducers
-export function bookReducers(state={books:[]}, action){
+export function booksReducers(state={books:[]}, action){
     switch(action.type){
         case "POST_BOOK":
         //let books = state.books.concat(action.payload);
@@ -24,7 +24,7 @@ export function bookReducers(state={books:[]}, action){
             return book.id === action.payload.id;
         })
         //create a new book with new values and same array index of the item to replace.  Use {...} spread operator also can use concat method as well
-        const newBookToUpdate = {...currentBookToUpdate[indexToUpdate], title: aciton.payload.title
+        const newBookToUpdate = {...currentBookToUpdate[indexToUpdate], title: action.payload.title
         }
         console.log('what is the newBookToUpdate', newBookToUpdate);
         //use slice to remove the book at the specified inx, replace with new object and join with the rest in the array.
