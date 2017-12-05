@@ -753,6 +753,8 @@ var _index = __webpack_require__(24);
 
 var _index2 = _interopRequireDefault(_index);
 
+var _booksActions = __webpack_require__(27);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //create store
@@ -763,7 +765,7 @@ store.subscribe(function () {
     //console.log('current price: ', store.getState()[1].price);
 });
 //create and dispatch actions
-store.dispatch({
+store.dispatch((0, _booksActions.postBooks)({
     type: "POST_BOOK",
     payload: [{
         id: 1,
@@ -776,23 +778,24 @@ store.dispatch({
         description: 'this is the second book descript',
         price: 50
     }]
-});
+}));
 
 //delete a book
-store.dispatch({
+store.dispatch((0, _booksActions.deleteBooks)({
     type: "DELETE_BOOK",
     payload: { id: 1 }
-});
+}));
 
 // UPDATE a book
-store.dispatch({
+store.dispatch((0, _booksActions.updateBooks)({
     type: "UPDATE_BOOK",
     payload: { id: 2,
         title: 'Learn React in 24h' }
-});
+}));
 
-// cart actions
+// {cart actions}
 // add to cart
+store.dispatch((0, _booksActions.addToCart)([{ id: 1 }]));
 store.dispatch({
     type: "ADD_TO_CART",
     payload: { id: 2 }
@@ -1630,6 +1633,43 @@ function cartReducers() {
             break;
     }
     return state;
+}
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+//Post a book
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.postBooks = postBooks;
+exports.deleteBooks = deleteBooks;
+exports.updateBooks = updateBooks;
+function postBooks(book) {
+    return {
+        type: "POST_BOOK",
+        payload: book
+    };
+}
+
+//delete a book
+function deleteBooks(id) {
+    return {
+        type: "DELETE_BOOK",
+        payload: id
+    };
+}
+
+//Update a book
+function updateBooks(book) {
+    return {
+        type: "UPDATE_BOOK",
+        payload: book
+    };
 }
 
 /***/ })
