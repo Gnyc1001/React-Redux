@@ -46,8 +46,10 @@ store.dispatch(postBooks({
 
   // {cart actions}
   // add to cart
-    store.dispatch(addToCart([{id: 1}]))
+  
     store.dispatch({
         type:"ADD_TO_CART",
         payload: {id: 2}
     })
+
+    store.dispatch(addToCart([{id: 1}]))
