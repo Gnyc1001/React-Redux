@@ -1,55 +1,61 @@
 "use strict"
-import {createStore} from 'redux';
+//REACT
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+
+import {applyMiddleware, createStore} from 'redux';
+
+import logger from 'redux-logger';
+
+//import combined reducerss
 import reducers from '../reducers/index';
-import {postBooks, deleteBooks, updateBooks} from '../actions/booksActions';
+//import actions
 import {addToCart} from '../actions/booksActions';
+import {postBooks, deleteBooks, updateBooks} from '../actions/booksActions';
+
 
 //create store
-const store = createStore(reducers);
+const store = createStore(reducers, middleware);
+const middleware = applyMiddleware(logger());
 
-store.subscribe(function(){
-    console.log('current state is: ', store.getState());
+// store.subscribe(function(){
+//     console.log('current state is: ', store.getState());
     //console.log('current price: ', store.getState()[1].price);
-})
+//})
+import BooksList from './components/pages/bookslist';
 //create and dispatch actions
-store.dispatch(postBooks({
-    type:"POST_BOOK",
-    payload: [{
-        id: 1,
-        title:'this is the book title',
-        description:'this is the book descript',
-        price: 35.99
-      },
-      {
-        id: 2,
-        title:'this is the second book title',
-        description: 'this is the second book descript',
-        price: 50
-      }]
-    })
-)
-
-    //delete a book
-    store.dispatch(deleteBooks({
-        type:"DELETE_BOOK",
-        payload: {id: 1}
-    })
-)
-
-    // UPDATE a book
-    store.dispatch(updateBooks({
-        type:"UPDATE_BOOK",
-        payload:{id: 2,
-        title:'Learn React in 24h'}
-    })
-)
-
-  // {cart actions}
-  // add to cart
-  
-    store.dispatch({
-        type:"ADD_TO_CART",
-        payload: {id: 2}
-    })
-
-    store.dispatch(addToCart([{id: 1}]))
+render(
+    <Provider store={store}>
+    <BooksList />
+    </Provider>, document.getElementById('app')
+);
+// STEP 2 create and dispatch actions
+store.dispatch(postBooks(
+    [{
+      id: 1,
+      title:'this is the book title',
+      description: 'this is the book description',
+      price: 33.33
+    },
+    {
+      id: 2,
+      title:'this is the second book title',
+      description: 'this is the second book description',
+      price: 50 
+    }]
+))
+// DELETE a book
+store.dispatch(deleteBooks(
+        {id: 1}
+    ))
+// UPDATE a book
+store.dispatch(updateBooks(
+    {
+      id: 2,
+      title:'Learn React in 24h'
+    }
+  ))
+//-->> CART ACTIONS <<--
+// ADD to cart
+store.dispatch(addToCart([{id: 1}]))
