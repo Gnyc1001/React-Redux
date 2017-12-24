@@ -1,7 +1,7 @@
 "use strict"
 import React from 'react';
-import {Connect} from 'react-redux';
-import {getBooks} from '../../actions/booksActions';
+import {connect} from 'react-redux';
+//import {getBooks} from '../../actions/booksActions';
 import {bindActionCreators} from 'redux';
 
 class BooksList extends React.Component{
@@ -9,8 +9,7 @@ class BooksList extends React.Component{
         this.props.getBooks()
        }
     render(){
-        const booksList =
-    this.props.books.map(function(booksArr){
+        const booksList = this.props.books.map(function(booksArr){
       return(
         <div key={booksArr.id}>
           <h2>{booksArr.title}</h2>
@@ -29,8 +28,10 @@ class BooksList extends React.Component{
 }
 
 function mapStateToProps(state){
+  return {
     books: state.books.books
   }
+}
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({ getBooks:getBooks }, dispatch)}
