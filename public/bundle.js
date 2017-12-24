@@ -303,20 +303,6 @@ module.exports = emptyFunction;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(22);
-} else {
-  module.exports = __webpack_require__(23);
-}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /*
 object-assign
 (c) Sindre Sorhus
@@ -409,7 +395,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 };
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -430,6 +416,20 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = emptyObject;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(22);
+} else {
+  module.exports = __webpack_require__(23);
+}
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
@@ -566,61 +566,6 @@ module.exports = warning;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
-
-var _createStore = __webpack_require__(16);
-
-var _createStore2 = _interopRequireDefault(_createStore);
-
-var _combineReducers = __webpack_require__(46);
-
-var _combineReducers2 = _interopRequireDefault(_combineReducers);
-
-var _bindActionCreators = __webpack_require__(47);
-
-var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
-
-var _applyMiddleware = __webpack_require__(48);
-
-var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
-
-var _compose = __webpack_require__(20);
-
-var _compose2 = _interopRequireDefault(_compose);
-
-var _warning = __webpack_require__(19);
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/*
-* This is a dummy function to check if the function name has been altered by minification.
-* If the function has been minified and NODE_ENV !== 'production', warn the user.
-*/
-function isCrushed() {}
-
-if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
-  (0, _warning2.default)('You are currently using minified code outside of NODE_ENV === \'production\'. ' + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
-}
-
-exports.createStore = _createStore2.default;
-exports.combineReducers = _combineReducers2.default;
-exports.bindActionCreators = _bindActionCreators2.default;
-exports.applyMiddleware = _applyMiddleware2.default;
-exports.compose = _compose2.default;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -647,7 +592,7 @@ try {
 module.exports = g;
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -715,7 +660,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -754,7 +699,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -835,7 +780,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -878,7 +823,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -951,7 +896,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -994,7 +939,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1022,6 +967,61 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
+
+var _createStore = __webpack_require__(16);
+
+var _createStore2 = _interopRequireDefault(_createStore);
+
+var _combineReducers = __webpack_require__(46);
+
+var _combineReducers2 = _interopRequireDefault(_combineReducers);
+
+var _bindActionCreators = __webpack_require__(47);
+
+var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
+
+var _applyMiddleware = __webpack_require__(48);
+
+var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
+
+var _compose = __webpack_require__(20);
+
+var _compose2 = _interopRequireDefault(_compose);
+
+var _warning = __webpack_require__(19);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*
+* This is a dummy function to check if the function name has been altered by minification.
+* If the function has been minified and NODE_ENV !== 'production', warn the user.
+*/
+function isCrushed() {}
+
+if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
+  (0, _warning2.default)('You are currently using minified code outside of NODE_ENV === \'production\'. ' + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
+}
+
+exports.createStore = _createStore2.default;
+exports.combineReducers = _combineReducers2.default;
+exports.bindActionCreators = _bindActionCreators2.default;
+exports.applyMiddleware = _applyMiddleware2.default;
+exports.compose = _compose2.default;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 16 */
@@ -1485,7 +1485,7 @@ function compose() {
 
 //REACT
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -1493,7 +1493,7 @@ var _reactDom = __webpack_require__(25);
 
 var _reactRedux = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-redux\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
-var _redux = __webpack_require__(7);
+var _redux = __webpack_require__(15);
 
 var _reduxLogger = __webpack_require__(49);
 
@@ -1503,11 +1503,13 @@ var _index = __webpack_require__(50);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _booksActions = __webpack_require__(53);
+var _cartActions = __webpack_require__(53);
 
-var _bookslist = __webpack_require__(54);
+var _booksActions = __webpack_require__(54);
 
-var _bookslist2 = _interopRequireDefault(_bookslist);
+var _booksList = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"components/pages/booksList\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _booksList2 = _interopRequireDefault(_booksList);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1518,7 +1520,7 @@ var store = (0, _redux.createStore)(_index2.default, middleware);
 
 //import combined reducerss
 
-var middleware = (0, _redux.applyMiddleware)((0, _reduxLogger2.default)());
+var middleware = (0, _redux.applyMiddleware)(_reduxLogger2.default);
 
 // store.subscribe(function(){
 //     console.log('current state is: ', store.getState());
@@ -1529,7 +1531,8 @@ var middleware = (0, _redux.applyMiddleware)((0, _reduxLogger2.default)());
 (0, _reactDom.render)(_react2.default.createElement(
     _reactRedux.Provider,
     { store: store },
-    _react2.default.createElement(_bookslist2.default, null)
+    _react2.default.createElement(_booksList2.default, null),
+    ' '
 ), document.getElementById('app'));
 // STEP 2 create and dispatch actions
 store.dispatch((0, _booksActions.postBooks)([{
@@ -1552,7 +1555,7 @@ store.dispatch((0, _booksActions.updateBooks)({
 }));
 //-->> CART ACTIONS <<--
 // ADD to cart
-store.dispatch((0, _booksActions.addToCart)([{ id: 1 }]));
+store.dispatch((0, _cartActions.addToCart)([{ id: 1 }]));
 
 /***/ }),
 /* 22 */
@@ -1572,8 +1575,8 @@ store.dispatch((0, _booksActions.addToCart)([{ id: 1 }]));
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var m = __webpack_require__(3),
-    n = __webpack_require__(4),
+var m = __webpack_require__(2),
+    n = __webpack_require__(3),
     p = __webpack_require__(1),
     q = "function" === typeof Symbol && Symbol["for"],
     r = q ? Symbol["for"]("react.element") : 60103,
@@ -1705,12 +1708,12 @@ if (process.env.NODE_ENV !== "production") {
   (function () {
     'use strict';
 
-    var _assign = __webpack_require__(3);
-    var emptyObject = __webpack_require__(4);
+    var _assign = __webpack_require__(2);
+    var emptyObject = __webpack_require__(3);
     var invariant = __webpack_require__(5);
     var warning = __webpack_require__(6);
     var emptyFunction = __webpack_require__(1);
-    var checkPropTypes = __webpack_require__(9);
+    var checkPropTypes = __webpack_require__(8);
 
     // TODO: this is special because it gets imported during build.
 
@@ -3124,16 +3127,16 @@ if (process.env.NODE_ENV === 'production') {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var aa = __webpack_require__(2),
-    l = __webpack_require__(10),
-    B = __webpack_require__(3),
+var aa = __webpack_require__(4),
+    l = __webpack_require__(9),
+    B = __webpack_require__(2),
     C = __webpack_require__(1),
-    ba = __webpack_require__(11),
-    da = __webpack_require__(12),
-    ea = __webpack_require__(13),
-    fa = __webpack_require__(14),
-    ia = __webpack_require__(15),
-    D = __webpack_require__(4);
+    ba = __webpack_require__(10),
+    da = __webpack_require__(11),
+    ea = __webpack_require__(12),
+    fa = __webpack_require__(13),
+    ia = __webpack_require__(14),
+    D = __webpack_require__(3);
 function E(a) {
   for (var b = arguments.length - 1, c = "Minified React error #" + a + "; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d" + a, d = 0; d < b; d++) {
     c += "\x26args[]\x3d" + encodeURIComponent(arguments[d + 1]);
@@ -5171,7 +5174,7 @@ module.exports = isNode;
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var React=__webpack_require__(2);var invariant=__webpack_require__(5);var warning=__webpack_require__(6);var ExecutionEnvironment=__webpack_require__(10);var _assign=__webpack_require__(3);var emptyFunction=__webpack_require__(1);var EventListener=__webpack_require__(11);var getActiveElement=__webpack_require__(12);var shallowEqual=__webpack_require__(13);var containsNode=__webpack_require__(14);var focusNode=__webpack_require__(15);var emptyObject=__webpack_require__(4);var checkPropTypes=__webpack_require__(9);var hyphenateStyleName=__webpack_require__(30);var camelizeStyleName=__webpack_require__(32);/**
+ */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var React=__webpack_require__(4);var invariant=__webpack_require__(5);var warning=__webpack_require__(6);var ExecutionEnvironment=__webpack_require__(9);var _assign=__webpack_require__(2);var emptyFunction=__webpack_require__(1);var EventListener=__webpack_require__(10);var getActiveElement=__webpack_require__(11);var shallowEqual=__webpack_require__(12);var containsNode=__webpack_require__(13);var focusNode=__webpack_require__(14);var emptyObject=__webpack_require__(3);var checkPropTypes=__webpack_require__(8);var hyphenateStyleName=__webpack_require__(30);var camelizeStyleName=__webpack_require__(32);/**
  * WARNING: DO NOT manually require this module.
  * This is a replacement for `invariant(...)` used by the error code system
  * and will _only_ be required by the corresponding babel pass.
@@ -8391,7 +8394,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var freeGlobal = (typeof global === 'undefined' ? 'undefined' : _typeof(global)) == 'object' && global && global.Object === Object && global;
 
 exports.default = freeGlobal;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 37 */
@@ -8623,7 +8626,7 @@ if (typeof self !== 'undefined') {
 
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(44)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(44)(module)))
 
 /***/ }),
 /* 44 */
@@ -9264,7 +9267,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         r = e.getState;return "function" == typeof t || "function" == typeof r ? S()({ dispatch: t, getState: r }) : void console.error("\n[redux-logger v3] BREAKING CHANGE\n[redux-logger v3] Since 3.0.0 redux-logger exports by default logger with default settings.\n[redux-logger v3] Change\n[redux-logger v3] import createLogger from 'redux-logger'\n[redux-logger v3] to\n[redux-logger v3] import { createLogger } from 'redux-logger'\n");
   };e.defaults = L, e.createLogger = S, e.logger = T, e.default = T, Object.defineProperty(e, "__esModule", { value: !0 });
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 50 */
@@ -9277,7 +9280,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _redux = __webpack_require__(7);
+var _redux = __webpack_require__(15);
 
 var _booksReducers = __webpack_require__(51);
 
@@ -9379,6 +9382,25 @@ function cartReducers() {
 
 "use strict";
 
+//Add to cart
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.addToCart = addToCart;
+function addToCart(book) {
+    return {
+        type: "ADD_TO_CART",
+        payload: book
+    };
+}
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 //Post a book
 
 Object.defineProperty(exports, "__esModule", {
@@ -9409,101 +9431,6 @@ function updateBooks(book) {
         payload: book
     };
 }
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-redux\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-var _booksActions = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../actions/booksActions\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-var _redux = __webpack_require__(7);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BooksList = function (_React$Component) {
-  _inherits(BooksList, _React$Component);
-
-  function BooksList() {
-    _classCallCheck(this, BooksList);
-
-    return _possibleConstructorReturn(this, (BooksList.__proto__ || Object.getPrototypeOf(BooksList)).apply(this, arguments));
-  }
-
-  _createClass(BooksList, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.props.getBooks();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var booksList = this.props.books.map(function (booksArr) {
-        return _react2.default.createElement(
-          'div',
-          { key: booksArr.id },
-          _react2.default.createElement(
-            'h2',
-            null,
-            booksArr.title
-          ),
-          _react2.default.createElement(
-            'h2',
-            null,
-            booksArr.description
-          ),
-          _react2.default.createElement(
-            'h2',
-            null,
-            booksArr.price
-          )
-        );
-      });
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'h1',
-          null,
-          'Hello React'
-        ),
-        booksList
-      );
-    }
-  }]);
-
-  return BooksList;
-}(_react2.default.Component);
-
-function mapStateToProps(state) {
-  books: state.books.books;
-}
-
-function mapDispatchToProps(dispatch) {
-  return (0, _redux.bindActionCreators)({ getBooks: _booksActions.getBooks }, dispatch);
-}
-
-exports.default = connect(mapStateToProps, mapDispatchToProps)(BooksList);
 
 /***/ })
 /******/ ]);

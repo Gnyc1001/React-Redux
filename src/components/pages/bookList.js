@@ -1,9 +1,9 @@
 "use strict"
 import React from 'react';
-import {connect} from 'react-redux';
-import {getBooks} from'../../actions/booksActions';
-import {bindActionCreators} from 'redux';
-import {Grid, Col, Row, Button} from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { getBooks } from '../../actions/booksActions';
+import { bindActionCreators } from 'redux';
+import { Grid, Col, Row, Button } from 'react-bootstrap';
 import BookItem from './bookItem';
 
 class BooksList extends React.Component{

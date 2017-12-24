@@ -11,24 +11,24 @@ import logger from 'redux-logger';
 //import combined reducerss
 import reducers from '../reducers/index';
 //import actions
-import {addToCart} from '../actions/booksActions';
+import {addToCart} from '../actions/cartActions';
 import {postBooks, deleteBooks, updateBooks} from '../actions/booksActions';
 
 
 //create store
 const store = createStore(reducers, middleware);
-const middleware = applyMiddleware(logger());
+const middleware = applyMiddleware(logger);
 
 // store.subscribe(function(){
 //     console.log('current state is: ', store.getState());
     //console.log('current price: ', store.getState()[1].price);
 //})
-import BooksList from './components/pages/bookslist';
+import BooksList from 'components/pages/booksList';
 //create and dispatch actions
 render(
     <Provider store={store}>
-    <BooksList />
-    </Provider>, document.getElementById('app')
+    <BooksList /> </Provider>,
+    document.getElementById('app')
 );
 // STEP 2 create and dispatch actions
 store.dispatch(postBooks(
