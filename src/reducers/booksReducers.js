@@ -20,6 +20,7 @@ export function booksReducers(state={
         return {...state, books:[...state.books]}
         break;
         case "POST_BOOKS":
+        //let books = state.books.concat(action.payload);        
         return {books:[...state.books, ...action.payload]}
         break;
         case "DELETE_BOOK":
