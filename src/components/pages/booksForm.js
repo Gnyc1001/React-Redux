@@ -14,7 +14,7 @@ class BooksForm extends React.Component{
             description: findDOMNode(this.refs.description).value,
             price: findDOMNode(this.refs.price).value,
         }]
-        return this.props.postBooks(book);
+        this.props.postBooks(book);
     }
 
     render(){
@@ -48,6 +48,6 @@ class BooksForm extends React.Component{
         )}
     }
     function mapDispatchToProps(dispatch){
-        return bindActionCreators({postBooks:postBooks}, dispatch)
+        return bindActionCreators({postBooks}, dispatch)
     }
 export default connect(null, mapDispatchToProps)(BooksForm);
