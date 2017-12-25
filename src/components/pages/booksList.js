@@ -5,6 +5,9 @@ import {getBooks} from '../../actions/booksActions';
 import {bindActionCreators} from 'redux';
 import { Grid, Col, Row, Button } from 'react-bootstrap';
 
+import BookItem from './bookItem';
+import BooksForm from './booksForm';
+
 class BooksList extends React.Component{
     componentDidMount(){
       //dispatch an action 
@@ -25,18 +28,22 @@ class BooksList extends React.Component{
     }
     render(){
         const BooksList = this.props.books.map(function(booksArr){
-      return(
+      return(//phone, tablet, larger devices 
         <Col xs={12} sm={6} md={4} key={booksArr.id}>
-          <h2>{booksArr.title}</h2>
-          <h2>{booksArr.description}</h2>
-          <h2>{booksArr.price}</h2>
-          <Button bsStyle='primary'>Buy </Button>
+          <BookItem
+            id= {booksArr.id}
+            title= {booksArr.title}
+            description={booksArr.description}
+            price={booksArr.price}/>
         </Col>
       )
     }) 
     return(
       <Grid>
         <Row>
+          <Col xs={12} sm={6}>
+          <BooksForm />
+          </Col>
           {BooksList}
         </Row>
       </Grid>

@@ -1,7 +1,7 @@
 "use strict"
 import React from 'react';
-import {Row, Col, Well, Button} from
-'react-bootstrap';
+import {Row, Col, Well, Button} from 'react-bootstrap';
+
 class BookItem extends React.Component{
   render(){
     return(
@@ -11,11 +11,10 @@ class BookItem extends React.Component{
             <h6>{this.props.title}</h6>
             <p>{this.props.description}</p>
             <h6>usd. {this.props.price}</h6>
-            <Button bsStyle='primary'>Buy  dnow</Button>
+            <Button bsStyle='primary'>Buy now</Button>
           </Col>
         </Row>
-        </Well> 
-        )
-    } 
+      </Well>
+  )} 
 }
 export default BookItem;
